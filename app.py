@@ -61,8 +61,7 @@ def transform_data():
     year_columns = [col for col in df_original.columns if 'Population' in col and col != 'World Population Percentage']
     
     # Select relevant columns
-    df_long = df_original[['Country/Territory', 'Continent'] + year_columns].copy()
-    df_long.columns = ['Country', 'Continent'] + year_columns
+    df_long = df_original[['Country', 'Continent'] + year_columns].copy()
 
     # Melt the dataframe
     df_long = pd.melt(
